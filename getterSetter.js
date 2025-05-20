@@ -15,7 +15,7 @@ class product{
 }
 
 const productObj = new product()
-productObj.setPrice = 500 //in Setter method this kind of parameter pass is prefered not in bracket
+productObj.setPrice = 500 //in Setter method this kind of parameter pass is prefered, not in bracket(new product(...))
 console.log(productObj.getPrice);
 
 

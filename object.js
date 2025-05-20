@@ -6,7 +6,7 @@
 
 
 
-//here create object by Object Literal
+//1. Object Literal
 let person = {
     first_name : "Abuzam",
     last_name : "Nangzai",
@@ -20,7 +20,7 @@ console.log(person.getFullName())
 
 
 
-//here create object by Instance of Object
+//2. Instance of Object
 let person = new Object() //এখানে new হচ্ছে optional
     person.first_name = "Nangzai"
     person.last_name = "Singha"
@@ -33,7 +33,7 @@ console.log(person.getName())
 
 
 
-//here create object by Object Constructor
+//3. Object Constructor
 function person (){
     this.first_name = "Abujam" //this বলতে বুজাই এই object এর মধ্যে first_name property বানানু
     this.last_name = "Nangzai"
