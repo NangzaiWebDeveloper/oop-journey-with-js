@@ -1,26 +1,33 @@
-//this is called functional or procedural way of program
+//Topic- 01
+//Encapsulation:যে জিনিসগুলো একই বৈশিষ্ট্যের অন্তর্গত, সেই বৈশিষ্ট্যগুলকে একটি কেপসুলে ভরে রাখাকে Encapsulation বলে।
 
-class Player {
-    #name
+class Player{
 
-    constructor(name, year, monthlySalary, noOfMonths) {
+    //Here (#) is indicate that, these are private property;
+    #name;
+    #birthday;
+    #monthlySalary;
+    #noOfMonths
+
+    constructor(name, birthday, monthlySalary, noOfMonths){
+        // this.name = name; //public property
         this.#name = name;
-        this.year = year;
-        this.monthlySalary = monthlySalary;
-        this.noOfMonths = noOfMonths;
+        this.#birthday = birthday;
+        this.#monthlySalary = monthlySalary;
+        this.#noOfMonths = noOfMonths;
     }
-    calculateAge() {
-        return this.year * this.noOfMonths;
+
+    #calculateAge(){
+        const diff_ms = Date.now() - new Date(this.#birthday).getTime();
+        const age_dt = new Date(diff_ms)
+
+        return Math.abs(age_dt.getUTCFullYear() - 1970);
     }
-    getSalary() {
-        return this.monthlySalary * this.noOfMonths;
+
+    #getSalary(){
+        return (this.#monthlySalary * this.#noOfMonths).toLocaleString()
     }
 }
-let Nangzai = new Player("Abuzam Nangzai", 5, 80000, 12)
-let Nasim = new Player("Nasim M Rahman", 3, 80000, 12)
 
-console.log(Nangzai.calculateAge())
-console.log(Nasim.getSalary())
-
-console.log(Nangzai.name)
-
+const Sakib = new Player("Sakib", "1987-03-24", 10000, 12)
+console.log(Sakib.calculateAge());
